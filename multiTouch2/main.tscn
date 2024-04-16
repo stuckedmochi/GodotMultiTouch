@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://de41r6jsi4hos"]
+
+[ext_resource type="Script" path="res://CollideObjects.gd" id="1_vdvc7"]
+[ext_resource type="PackedScene" uid="uid://dhptpmkdx7nlk" path="res://collide_object.tscn" id="1_voar8"]
+
+[sub_resource type="Environment" id="Environment_btfi4"]
+background_mode = 1
+background_color = Color(0.72549, 0.72549, 0.72549, 1)
+
+[node name="Main" type="Node3D"]
+
+[node name="CollideObjects" type="Node3D" parent="."]
+script = ExtResource("1_vdvc7")
+
+[node name="CollideObject" parent="CollideObjects" instance=ExtResource("1_voar8")]
+transform = Transform3D(0.710664, 0, -0.703531, 0, 1, 0, 0.703531, 0, 0.710664, 2, 0, 1)
+
+[node name="CollideObject2" parent="CollideObjects" instance=ExtResource("1_voar8")]
+transform = Transform3D(0.968235, 0, 0.250042, 0, 1, 0, -0.250042, 0, 0.968235, -1.76193, 0, 1.15883)
+
+[node name="CollideObject3" parent="CollideObjects" instance=ExtResource("1_voar8")]
+transform = Transform3D(0.737362, 0.428018, 0.522588, -0.502024, 0.864854, 0, -0.451962, -0.262352, 0.852585, 0.348931, 0.996411, -0.642317)
+
+[node name="CollideObject4" parent="CollideObjects" instance=ExtResource("1_voar8")]
+transform = Transform3D(0.627405, 0.364192, -0.688279, -0.502024, 0.864854, -1.55743e-08, 0.59526, 0.345532, 0.725446, 2.43163, -0.090135, -1.06032)
+
+[node name="CollideObject5" parent="CollideObjects" instance=ExtResource("1_voar8")]
+transform = Transform3D(0.760091, 0.441212, -0.477067, -0.502024, 0.864854, -1.55743e-08, 0.412593, 0.239499, 0.878867, -0.98438, -1.09013, -0.0603189)
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.63672)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_btfi4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.377744, 0.92591, 0, -0.92591, 0.377744, 0, 2.6531, 0)
+
+[node name="CollideObject" parent="." instance=ExtResource("1_voar8")]
+transform = Transform3D(0.808873, -0.587983, 0, 0.587983, 0.808873, 0, 0, 0, 1, -1.70773, 0.873284, -1.429)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhptpmkdx7nlk"]
+
+[ext_resource type="Script" path="res://collide_object.gd" id="1_6g5w7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pxs80"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_28w03"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ff41"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="CollideObject" type="StaticBody3D"]
+script = ExtResource("1_6g5w7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_pxs80")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_28w03")
+surface_material_override/0 = SubResource("StandardMaterial3D_3ff41")
+
+[node name="touchingIndicesLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.508171)
+text = "[]"
+font_size = 64
